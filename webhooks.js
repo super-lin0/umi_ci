@@ -34,7 +34,7 @@ handler.on('error', function(err) {
 });
 
 handler.on('*', function(event) {
-  console.log('Received *', event.payload.action);
+  console.log('Received *', event);
 });
 
 handler.on('push', function(event) {
