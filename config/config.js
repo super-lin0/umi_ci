@@ -112,6 +112,12 @@ export default {
               authority: ['admin'],
             },
             {
+              name: '搜索列表（项目）',
+              icon: 'smile',
+              path: '/listsearchprojects',
+              component: './ListSearchProjects',
+            },
+            {
               name: 'list.table-list',
               icon: 'table',
               path: '/list',
@@ -140,6 +146,24 @@ export default {
               icon: 'smile',
               path: '/dashboardmonitor',
               component: './DashboardMonitor',
+            },
+            {
+              name: '流程编辑器',
+              icon: 'smile',
+              path: '/editorflow',
+              component: './EditorFlow',
+            },
+            {
+              name: '拓扑编辑器',
+              icon: 'smile',
+              path: '/editorkoni',
+              component: './EditorKoni',
+            },
+            {
+              name: '脑图编辑器',
+              icon: 'smile',
+              path: '/editormind',
+              component: './EditorMind',
             },
             {
               component: './404',
