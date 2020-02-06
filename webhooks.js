@@ -1,7 +1,7 @@
 var http = require('http');
 var createHandler = require('github-webhook-handler');
 var handler = createHandler({
-  path: '/webhooks',
+  path: '/docker_deploy',
   secret: '46f3659f0276a81439be3701ec203b5f9b15724b',
 });
 
