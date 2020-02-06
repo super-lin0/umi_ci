@@ -33,10 +33,6 @@ handler.on('error', function(err) {
   console.error('Error:', err.message);
 });
 
-handler.on('*', function(event) {
-  console.log('Received *', event);
-});
-
 handler.on('push', function(event) {
   const { repository, ref } = event.payload;
   console.log('Received a push event for %s to %s', repository.name, ref);
