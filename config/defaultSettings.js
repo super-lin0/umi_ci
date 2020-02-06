@@ -11,7 +11,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'Nemean Pro 2.0',
+  title: 'Nemean Pro 3.0',
   pwa: false,
   iconfontUrl: '',
 };
