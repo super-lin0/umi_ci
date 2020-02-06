@@ -6,7 +6,7 @@ git pull
 
 # 强制重新编译容器
 docker-compose down
-docker-compose up -d --force-recreate --build
+docker-compose up --force-recreate --build
 
 
 # 定制镜像
