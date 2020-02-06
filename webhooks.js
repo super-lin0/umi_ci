@@ -1,7 +1,9 @@
 var http = require('http');
 var createHandler = require('github-webhook-handler');
-var handler = createHandler({ path: '/webhooks', secret: 'myHashSecret' });
-// 上面的 secret 保持和 GitHub 后台设置的一致
+var handler = createHandler({
+  path: '/webhooks',
+  secret: '46f3659f0276a81439be3701ec203b5f9b15724b',
+});
 
 function run_cmd(cmd, args, callback) {
   var spawn = require('child_process').spawn;
@@ -15,8 +17,6 @@ function run_cmd(cmd, args, callback) {
     callback(resp);
   });
 }
-// debug用
-// run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
 
 http
   .createServer(function(req, res) {
@@ -35,7 +35,6 @@ handler.on('error', function(err) {
 
 handler.on('*', function(event) {
   console.log('Received *', event.payload.action);
-  //   run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
 });
 
 handler.on('push', function(event) {
