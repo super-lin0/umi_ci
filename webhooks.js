@@ -38,11 +38,8 @@ handler.on('*', function(event) {
 });
 
 handler.on('push', function(event) {
-  console.log(
-    'Received a push event for %s to %s',
-    event.payload.repository.name,
-    event.payload.ref,
-  );
+  const { repository, ref } = event.payload;
+  console.log('Received a push event for %s to %s', repository.name, ref);
   // 分支判断
   if (event.payload.ref === 'refs/heads/master') {
     console.log('deploy master..');
@@ -53,11 +50,10 @@ handler.on('push', function(event) {
 });
 
 handler.on('issues', function(event) {
-  console.log(
-    'Received an issue event for % action=%s: #%d %s',
-    event.payload.repository.name,
-    event.payload.action,
-    event.payload.issue.number,
-    event.payload.issue.title,
-  );
+  const {
+    repository: { name },
+    action,
+    issue: { number, title },
+  } = event.payload;
+  console.log('Received an issue event for % action=%s: #%d %s', name, action, number, title);
 });
