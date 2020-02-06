@@ -1,5 +1,5 @@
 apps:
-  - script: webhook.js
+  - script: webhooks.js
     instances: 2
     watch: true
     env:
